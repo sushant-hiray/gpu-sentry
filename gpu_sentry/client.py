@@ -64,7 +64,7 @@ def get_statistics():
                 "memory": {
                     "total": _convert_kb_to_gb(int(memory.total)),
                     "used": _convert_kb_to_gb(int(memory.used)),
-                    "utilisation": int(memory.used / memory.total * 100)
+                    "utilisation": int(100 * memory.used / memory.total)
                 },
             })
     except NVMLError as error:
